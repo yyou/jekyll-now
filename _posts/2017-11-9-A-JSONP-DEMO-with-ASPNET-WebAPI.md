@@ -55,11 +55,11 @@ port
 
 We try to create a separate origin in local development PC, the easist way is to create another website and bind it with another port number instead of default 80. So I create a new website in IIS with name 'anothersite' and bind port number 81 to the new site.
 
-({{ site.baseurl }}/images/2017-11-09-jsonp-webapi/iis.png)
+[IIS]({{ site.baseurl }}/images/2017-11-09-jsonp-webapi/iis.png)
 
 Then we create a new Applicaton for the webapi project in the 'anothersite'.
 
-({{ site.baseurl }}/images/2017-11-09-jsonp-webapi/iis2.png)
+[Create new website]({{ site.baseurl }}/images/2017-11-09-jsonp-webapi/iis2.png)
 
 Then we create a HTML file index.html and save it into folder 'C:\inetpub\wwwroot' (default folder for Default WebSite in IIS).
 
@@ -95,10 +95,10 @@ Then we create a HTML file index.html and save it into folder 'C:\inetpub\wwwroo
 
 Now we open the html file in brower and click the button. However, we got error as below shows.
 
-({{ site.baseurl }}/images/2017-11-09-jsonp-webapi/error.png)
+[Error]({{ site.baseurl }}/images/2017-11-09-jsonp-webapi/error.png)
 
 This error is caused by the .NET framework version of the application pool of the newly-created 'anothersite'. The default .NET framework version of new application pool is v2.0. Change it to v4.0 will solve this problem.
 
-({{ site.baseurl }}/images/2017-11-09-jsonp-webapi/iis3.png)
+[.NET Version]({{ site.baseurl }}/images/2017-11-09-jsonp-webapi/iis3.png)
 
 Now we click the button and its behavior is as what we expect.
