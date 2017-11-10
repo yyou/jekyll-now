@@ -47,11 +47,9 @@ This method is to return an user based on id sent from client. The value of vari
 
 Now we build the whole solution in VS and if there is no error, we'll deploy it in IIS. Since JSONP is the technical to break the limit of Same-Origin Policy. So we try to deploy this web api into a separate origin. From [Definition of an origin](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy), we know that if 2 URLs differ in any of these parts below, we can say that they are in different origin:
 
-protocol
-
-domain
-
-port
+* protocol
+* domain
+* port
 
 We try to create a separate origin in local development PC, the easist way is to create another website and bind it with another port number instead of default 80. So I create a new website in IIS with name 'anothersite' and bind port number 81 to the new site.
 
@@ -102,3 +100,5 @@ This error is caused by the .NET framework version of the application pool of th
 ![.NET Version]({{ site.baseurl }}/images/2017-11-09-jsonp-webapi/iis3.png)
 
 Now we click the button and its behavior is as what we expect.
+
+![Expected result]({{ site.baseurl }}/images/2017-11-09-jsonp-webapi/result.png)
